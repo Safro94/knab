@@ -35,10 +35,9 @@ describe('Cryptocurrency Service', () => {
 	const code = 'BTC';
 	const key = `crypto_${code}`;
 
-	it('should call getByCode from client and return an error object when there is no data and no cached data', async () => {
+	it('should call getByCode from client and return undefined when there is no data and no cached data', async () => {
 		//Arrange
 		const mockedData = { status: { error_code: 400 } };
-		const expectedResult = { error: mockedData.status.error_code };
 		getByCode.mockImplementation(() => mockedData);
 
 		//Act
@@ -48,7 +47,7 @@ describe('Cryptocurrency Service', () => {
 		expect(cache.get).toHaveBeenCalledTimes(1);
 		expect(cache.get).toHaveBeenCalledWith(key);
 
-		expect(result).toEqual(expectedResult);
+		expect(result).toBeFalsy();
 
 		expect(getByCode).toHaveBeenCalledTimes(1);
 		expect(getByCode).toHaveBeenCalledWith(code);
@@ -108,5 +107,25 @@ describe('Cryptocurrency Service', () => {
 		expect(result).toEqual(mockExpectedResult);
 
 		expect(getByCode).not.toHaveBeenCalled();
+	});
+
+	it('should call calculateQuoteByCurrency and return an object with all the quotes', () => {
+		//Arrange
+		const price = 100;
+		const rates = [
+			{ rate: 1, currency: 'USD' },
+			{ rate: 2, currency: 'EUR' },
+		];
+
+		const expectedResult = [
+			{ quote: parseFloat(price * 1).toFixed(2), currency: 'USD' },
+			{ quote: parseFloat(price * 2).toFixed(2), currency: 'EUR' },
+		];
+
+		//Act
+		const result = CrytocurrencyService.calculateQuoteByCurrency(price, rates);
+
+		//Assert
+		expect(result).toEqual(expectedResult);
 	});
 });

@@ -11,12 +11,18 @@ class CryptocurrencyService {
 		if (cachedData) return cachedData;
 
 		const crypto = await getByCode(code);
-		if (crypto && !crypto.data) return { error: crypto.status.error_code };
+		if (crypto && !crypto.data) return;
 
 		const mappedCryptocurrency = mapCryptocurrency(crypto.data, code);
 		cache.set(key, mappedCryptocurrency, CACHE_TIME_SECONDS);
 
 		return mappedCryptocurrency;
+	}
+
+	calculateQuoteByCurrency(price, rates) {
+		return rates.map(({ rate, currency }) => {
+			return { quote: parseFloat(price * rate).toFixed(2), currency };
+		});
 	}
 }
 
