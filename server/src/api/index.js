@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 const slowDown = require('express-slow-down');
+require('../utils/cache');
 
 const errorHandler = require('../middlewares/errorHandler');
 const notFound = require('../middlewares/notFound');
