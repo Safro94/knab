@@ -1,6 +1,11 @@
+const { getByCode } = require('../integration/cryptocurrencyClient');
+
 class CryptocurrencyService {
 	async getByCode(code) {
-		return {};
+		const crypto = await getByCode(code);
+		if (crypto && !crypto.data) return;
+
+		return crypto.data;
 	}
 }
 
