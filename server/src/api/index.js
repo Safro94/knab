@@ -7,6 +7,7 @@ const rateLimit = require('express-rate-limit');
 const slowDown = require('express-slow-down');
 
 const errorHandler = require('../middlewares/errorHandler');
+const notFound = require('../middlewares/notFound');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -32,6 +33,7 @@ app.use(express.json());
 // Routes
 
 // Not found
+app.use(notFound);
 
 // Error handler
 app.use(errorHandler);
