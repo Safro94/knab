@@ -1,11 +1,12 @@
 const { getByCode } = require('../integration/cryptocurrencyClient');
+const { mapCryptocurrency } = require('../utils/mappers');
 
 class CryptocurrencyService {
 	async getByCode(code) {
 		const crypto = await getByCode(code);
 		if (crypto && !crypto.data) return;
 
-		return crypto.data;
+		return mapCrypto(crypto.data, code);
 	}
 }
 
