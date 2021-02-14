@@ -1,21 +1,31 @@
 import { useState } from 'react'
+import { useErrorHandler } from 'react-error-boundary';
 
 import Form from 'components/form';
 
-import './index.scss';
+import fetcher from 'utils/fetcher';
 
+import { GET_CRYPTO_ENDPOINT } from 'constants/endpoints';
+
+import './index.scss';
 
 const SearchContainer = () => {
   const [code, setCode] = useState<string>('');
+  const handleError = useErrorHandler();
 
   const isInvalid = code === '';
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+    fetcher({
+      url: `${process.env.REACT_APP_SERVER_URL}${GET_CRYPTO_ENDPOINT}${code}`,
+    }).then(res => {
+      console.log(res);
+    }, handleError);
   }
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setCode(e.target.value)
+    setCode(e.target.value);
   }
 
   return (
