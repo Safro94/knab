@@ -4,9 +4,9 @@ import SearchContainer from 'containers/searchContainer';
 
 const Home: FC = () => {
   return (
-    <div>
+    <>
       <SearchContainer />
-    </div>
+    </>
   )
 }
 

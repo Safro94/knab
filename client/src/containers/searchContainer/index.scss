@@ -1,0 +1,49 @@
+@use '../../styles/index' as *;
+
+.form {
+	@include flex-center;
+	flex-direction: column;
+	width: 50%;
+	margin: auto;
+
+	&__input-wrapper {
+		background-color: $secondary-color;
+		box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+		border-color: rgba(223, 225, 229, 0);
+		width: 100%;
+		border-radius: 25px;
+	}
+
+	&__text-input {
+		background-color: transparent;
+		border: none;
+		color: rgba(0, 0, 0, 0.87);
+		font-size: 1rem;
+		padding: 10px 15px;
+		width: 100%;
+	}
+
+	&__submit {
+		@include transition;
+		background: $primary-color;
+		padding: 10px 35px;
+		text-transform: uppercase;
+		border-radius: 25px;
+		color: $secondary-color;
+		border: 1px solid transparent;
+		margin: 10px 0;
+
+		&:hover {
+			@include hover(
+				$background: $secondary-color,
+				$color: $primary-color,
+				$border: $primary-color
+			);
+		}
+
+		&:disabled {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+	}
+}
