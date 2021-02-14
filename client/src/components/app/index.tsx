@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 
 import Error from 'components/error';
+import Header from 'components/header';
 
 import Home from 'pages/home'
 import NotFound from 'pages/notFound'
@@ -16,17 +17,22 @@ import './index.scss';
 const App: FC = () => {
   return (
     <div className="app">
-      <ErrorBoundary FallbackComponent={Error}>
-        <Switch>
-          <Route exact path={HOME}>
-            <CryptocurrencyProvider>
-              <Home />
-            </CryptocurrencyProvider>
-          </Route>
 
-          <Route component={NotFound} />
-        </Switch>
-      </ErrorBoundary>
+      <div className='app__container'>
+        <Header />
+
+        <ErrorBoundary FallbackComponent={Error}>
+          <Switch>
+            <Route exact path={HOME}>
+              <CryptocurrencyProvider>
+                <Home />
+              </CryptocurrencyProvider>
+            </Route>
+
+            <Route component={NotFound} />
+          </Switch>
+        </ErrorBoundary>
+      </div>
     </div>
   );
 }

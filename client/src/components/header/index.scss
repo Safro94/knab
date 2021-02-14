@@ -1,0 +1,31 @@
+@use '../../styles/index' as *;
+
+.header {
+	@include display($align: center, $justify: space-between);
+	padding: 20px 10px;
+
+	&__icon {
+		display: block;
+		width: 50px;
+	}
+
+	&__links {
+		@include display($align: center);
+	}
+
+	&__link {
+		padding: 8px 16px;
+		font-size: 1rem;
+		color: $primary-color;
+	}
+}
+
+@include mq-sm {
+	.header {
+		padding: 20px;
+
+		&__icon {
+			width: 70px;
+		}
+	}
+}

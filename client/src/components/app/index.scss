@@ -1,26 +1,34 @@
 @use '../../styles/index' as *;
 
 .app {
-	display: grid;
-	gap: 15px;
-	padding: 1rem;
+	&__container {
+		display: grid;
+		gap: 25px;
+		padding: 1rem;
+	}
 }
 
 @include mq-sm {
 	.app {
-		max-width: map-get($breakpoints, 'sm');
-		margin: auto;
+		&__container {
+			max-width: map-get($breakpoints, 'sm');
+			margin: auto;
+		}
 	}
 }
 
 @include mq-md {
 	.app {
-		max-width: map-get($breakpoints, 'md');
+		&__container {
+			max-width: map-get($breakpoints, 'md');
+		}
 	}
 }
 
 @include mq-lg {
 	.app {
-		max-width: map-get($breakpoints, 'lg');
+		&__container {
+			max-width: map-get($breakpoints, 'lg');
+		}
 	}
 }

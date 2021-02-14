@@ -28,6 +28,7 @@ const SearchContainer = () => {
       url: `${process.env.REACT_APP_SERVER_URL}${GET_CRYPTO_ENDPOINT}${code}`,
     }).then((res: ICryptocurrency) => {
       !res ? setCryptocurrency(null) : setCryptocurrency(res)
+      setCode('')
     }, handleError);
   }
 

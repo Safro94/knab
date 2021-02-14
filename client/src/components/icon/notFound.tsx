@@ -1,5 +1,5 @@
-const NotFoundIcon = ({ ...rest }) => (
-	<svg viewBox='0 0 130 167' {...rest}>
+const NotFoundIcon = () => (
+	<svg viewBox='0 0 130 167'>
 		<defs>
 			<style>
 				{
