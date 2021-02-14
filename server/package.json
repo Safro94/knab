@@ -7,7 +7,7 @@
     "start": "node src/api/index.js",
     "server": "nodemon src/api/index.js",
     "client": "cd .. && cd client && npm start",
-    "dev":  "concurrently \"npm run start\" \"npm run client\"",
+    "dev":  "concurrently \"npm run server\" \"npm run client\"",
     "test": "cross-env NODE_ENV=test jest --env=node --watchAll",
     "coverage": "cross-env NODE_ENV=test jest --coverage"
   },
