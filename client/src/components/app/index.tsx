@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Home from 'pages/home'
+import NotFound from 'pages/notFound'
 
 import { CryptocurrencyProvider } from 'hooks/cryptocurrency';
 
@@ -19,7 +20,7 @@ const App: FC = () => {
           </CryptocurrencyProvider>
         </Route>
 
-        {/* <Route component={NotFound} /> */}
+        <Route component={NotFound} />
       </Switch>
     </div>
   );

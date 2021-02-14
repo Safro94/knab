@@ -1,0 +1,16 @@
+@use '../../styles/index' as *;
+
+.not-found {
+	@include display($direction: column, $align: center);
+	padding: 20px;
+
+	&__icon {
+		display: block;
+		width: 300px;
+	}
+
+	&__link {
+		color: $primary-color;
+		cursor: pointer;
+	}
+}
