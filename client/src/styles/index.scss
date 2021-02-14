@@ -1,4 +1,3 @@
-@use 'breakpoints';
-@use 'colors';
-@use 'mixins';
-@use 'media-queries';
+@forward 'breakpoints';
+@forward 'colors';
+@forward 'mixins';

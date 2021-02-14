@@ -1,20 +1,20 @@
-@use 'breakpoints.scss';
-@use 'colors.scss';
+@use 'breakpoints';
+@use 'colors';
 
 @mixin mq-sm {
-	@media (min-width: map-get($breakpoints, 'sm')) {
+	@media (min-width: map-get(breakpoints.$breakpoints, 'sm')) {
 		@content;
 	}
 }
 
 @mixin mq-md {
-	@media (min-width: map-get($breakpoints, 'md')) {
+	@media (min-width: map-get(breakpoints.$breakpoints, 'md')) {
 		@content;
 	}
 }
 
 @mixin mq-lg {
-	@media (min-width: map-get($breakpoints, 'lg')) {
+	@media (min-width: map-get(breakpoints.$breakpoints, 'lg')) {
 		@content;
 	}
 }

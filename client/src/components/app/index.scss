@@ -1,2 +1,23 @@
+@use '../../styles/index' as *;
+
 .app {
+}
+
+@include mq-sm {
+	.app {
+		max-width: map-get($breakpoints, 'sm');
+		margin: auto;
+	}
+}
+
+@include mq-md {
+	.app {
+		max-width: map-get($breakpoints, 'md');
+	}
+}
+
+@include mq-lg {
+	.app {
+		max-width: map-get($breakpoints, 'lg');
+	}
 }

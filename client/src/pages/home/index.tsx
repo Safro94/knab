@@ -1,9 +1,11 @@
-import { FC } from 'react'
+import { FC } from 'react';
+
+import SearchContainer from 'containers/searchContainer';
 
 const Home: FC = () => {
   return (
     <div>
-      Home page
+      <SearchContainer />
     </div>
   )
 }
