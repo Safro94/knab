@@ -1,7 +1,10 @@
 import { FC } from 'react';
 
-const Form: FC<React.HTMLProps<HTMLFormElement>> & { Submit: React.FunctionComponent<React.HTMLProps<HTMLButtonElement>> } & { TextInput: React.FunctionComponent<React.HTMLProps<HTMLInputElement>> } = ({ children, ...rest }) => {
-  return <form  {...rest}>{children}</form>;
+const Form: FC<React.HTMLProps<HTMLFormElement>>
+  & { Submit: React.FunctionComponent<React.HTMLProps<HTMLButtonElement>> }
+  & { TextInput: React.FunctionComponent<React.HTMLProps<HTMLInputElement>> }
+= ({ children, ...rest }) => {
+  return <form {...rest}>{children}</form>;
 };
 
 const TextInput: FC<React.HTMLProps<HTMLInputElement>> = ({ ...rest }) => {
@@ -18,7 +21,7 @@ const Submit: FC<React.HTMLProps<HTMLButtonElement>> = ({ children, ...rest }) =
   );
 };
 
-Form.TextInput = TextInput
-Form.Submit = Submit
+Form.TextInput = TextInput;
+Form.Submit = Submit;
 
 export default Form

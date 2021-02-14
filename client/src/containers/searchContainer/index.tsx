@@ -18,7 +18,6 @@ const SearchContainer = () => {
   const handleError = useErrorHandler();
 
   const [code, setCode] = useState<string>('');
-  const [error, setError] = useState<string>('');
 
   const isInvalid = code === '';
 
@@ -27,12 +26,7 @@ const SearchContainer = () => {
     fetcher({
       url: `${process.env.REACT_APP_SERVER_URL}${GET_CRYPTO_ENDPOINT}${code}`,
     }).then((res: ICryptocurrency) => {
-      if (!res) {
-        setError(error)
-        setCryptocurrency(null)
-      } else {
-        setCryptocurrency(res)
-      }
+      !res ? setCryptocurrency(null) : setCryptocurrency(res)
     }, handleError);
   }
 
@@ -41,19 +35,18 @@ const SearchContainer = () => {
   }
 
   return (
-    <section>
-      <Form className='form' onSubmit={onSubmit} method='POST'>
-        <div className='form__input-wrapper'>
+    <section className='search-container'>
+      <Form className='search-container__form' onSubmit={onSubmit} method='POST'>
+        <div className='search-container__input-wrapper'>
           <Form.TextInput
             placeholder='Enter cryptocurrency code (e.g. BTC)'
             onChange={onChange}
             value={code}
-            className='form__text-input'
+            className='search-container__text-input'
           />
-          {/* {error && <Form.Error>{error}</Form.Error>} */}
         </div>
 
-        <Form.Submit className='form__submit' disabled={isInvalid}>Search</Form.Submit>
+        <Form.Submit className='search-container__submit' disabled={isInvalid}>Search</Form.Submit>
       </Form>
     </section>
   )

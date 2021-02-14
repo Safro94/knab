@@ -1,10 +1,13 @@
 @use '../../styles/index' as *;
 
-.form {
-	@include flex-center;
-	flex-direction: column;
-	width: 50%;
-	margin: auto;
+.search-container {
+
+	&__form {
+		@include flex-center;
+		flex-direction: column;
+		width: 50%;
+		margin: auto;
+	}
 
 	&__input-wrapper {
 		background-color: $secondary-color;
