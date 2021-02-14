@@ -4,18 +4,18 @@ const headers = { 'X-CMC_PRO_API_KEY': process.env.COIN_MARKET_CAP_API_KEY };
 
 const getByCode = async code => {
 	const endpoint = `${process.env.COIN_MARKET_CAP_API_URL}/cryptocurrency/quotes/latest?symbol=${code}`;
-	const result = await fetch({ url: endpoint, headers });
+	// const result = await fetch({ url: endpoint, headers });
 
-	// const result = {
-	// 	status: {
-	// 		timestamp: '2021-02-13T20:48:47.554Z',
-	// 		error_code: 400,
-	// 		error_message: 'Invalid value for "symbol": "123"',
-	// 		elapsed: 0,
-	// 		credit_count: 0,
-	// 		notice: null,
-	// 	},
-	// };
+	const result = {
+		status: {
+			timestamp: '2021-02-13T20:48:47.554Z',
+			error_code: 400,
+			error_message: 'Invalid value for "symbol": "123"',
+			elapsed: 0,
+			credit_count: 0,
+			notice: null,
+		},
+	};
 
 	// const result = {
 	// 	status: {

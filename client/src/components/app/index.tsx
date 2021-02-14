@@ -3,6 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 
 import Home from 'pages/home'
 
+import { CryptocurrencyProvider } from 'hooks/cryptocurrency';
+
 import { HOME } from 'constants/routes';
 
 import './index.scss';
@@ -11,7 +13,11 @@ const App: FC = () => {
   return (
     <div className="app">
       <Switch>
-        <Route exact path={HOME} component={Home} />
+        <Route exact path={HOME}>
+          <CryptocurrencyProvider>
+            <Home />
+          </CryptocurrencyProvider>
+        </Route>
 
         {/* <Route component={NotFound} /> */}
       </Switch>
