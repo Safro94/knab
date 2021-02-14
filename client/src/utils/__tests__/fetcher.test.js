@@ -17,16 +17,10 @@ describe('Fetcher', () => {
 		expect(result).toEqual(data);
 	});
 
-	it('should return an error', async () => {
-		const error = { error: 'error' };
+	it('should throw an error', async () => {
+		const error = new Error('error');
 		axios.get.mockImplementation(() => Promise.reject(error));
 
-		const result = await fetcher({
-			url: 'test',
-		});
-
-		expect(axios.get).toBeCalledTimes(1);
-		expect(axios.get.mock.calls[0][0]).toBe('test');
-		expect(result).toEqual(error);
+		await expect(fetcher({ url: 'test' })).rejects.toThrow();
 	});
 });
