@@ -1,0 +1,27 @@
+@use '../../styles/index' as *;
+
+%grid-gap {
+	display: grid;
+	gap: 1rem;
+}
+
+.quotes-container {
+	@extend %grid-gap;
+
+	&__title,
+	&__error {
+		text-align: center;
+	}
+
+	&__items {
+		@extend %grid-gap;
+	}
+}
+
+@include mq-sm {
+	.quotes-container {
+		&__items {
+			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		}
+	}
+}

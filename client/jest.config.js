@@ -1,5 +1,5 @@
 module.exports = {
-	moduleDirectories: ['node_modules', 'utils'],
+	moduleDirectories: ['node_modules', 'src'],
 	setupFiles: ['@testing-library/react/dont-cleanup-after-each'],
 	roots: ['<rootDir>/src'],
 	setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
@@ -11,14 +11,4 @@ module.exports = {
 		'!**/node_modules/**',
 		'!**/__tests__/**',
 	],
-	moduleNameMapper: {
-		'^./index.*': 'identity-obj-proxy',
-		'^components(.*)': '<rootDir>/src/components/$1',
-		'^constants(.*)': '<rootDir>/src/constants/$1',
-		'^containers(.*)': '<rootDir>/src/containers/$1',
-		'^services/(.*)': '<rootDir>/src/services/$1',
-		'^hooks/(.*)': '<rootDir>/src/hooks/$1',
-		'^pages/(.*)': '<rootDir>/src/pages/$1',
-		'^utils/(.*)': '<rootDir>/src/utils/$1',
-	},
 };

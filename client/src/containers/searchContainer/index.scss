@@ -1,11 +1,9 @@
 @use '../../styles/index' as *;
 
 .search-container {
-
 	&__form {
 		@include flex-center;
 		flex-direction: column;
-		width: 50%;
 		margin: auto;
 	}
 
@@ -47,6 +45,14 @@
 		&:disabled {
 			opacity: 0.5;
 			pointer-events: none;
+		}
+	}
+}
+
+@include mq-sm {
+	.search-container {
+		&__form {
+			width: 50%;
 		}
 	}
 }

@@ -1,0 +1,78 @@
+@use '../../styles/index' as *;
+
+.quote {
+	@include transition;
+	@include display(
+		$type: grid,
+		$align: center,
+		$justify: center,
+		$direction: column
+	);
+	gap: 10px;
+	grid-template-columns: 50px 1fr;
+	border: 1px solid $primary-color;
+	border-radius: 6px;
+	padding: 1rem;
+	cursor: pointer;
+
+	&:hover {
+		@include hover(
+			$border: $secondary-color,
+			$color: $secondary-color,
+			$background: $primary-color
+		);
+	}
+
+	&__currency-wrapper {
+		@include display($type: grid, $direction: column);
+		gap: 3px;
+	}
+
+	&__currency {
+		font-size: 1rem;
+	}
+
+	&__value {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+
+	&__icon {
+		width: 50px;
+		height: 50px;
+		display: block;
+		margin: auto;
+	}
+}
+
+@include mq-sm {
+	.quote {
+		&__icon {
+			width: 100%;
+			height: 100%;
+		}
+
+		&__value {
+			font-size: 1rem;
+		}
+	}
+}
+
+@include mq-md {
+	.quote {
+		grid-template-columns: 1fr;
+
+		&__icon {
+			width: 80%;
+			height: 80%;
+		}
+
+		&__value {
+			font-size: 1.5rem;
+		}
+
+		&__currency-wrapper {
+			text-align: center;
+		}
+	}
+}

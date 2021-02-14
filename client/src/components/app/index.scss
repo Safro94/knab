@@ -1,6 +1,9 @@
 @use '../../styles/index' as *;
 
 .app {
+	display: grid;
+	gap: 15px;
+	padding: 1rem;
 }
 
 @include mq-sm {

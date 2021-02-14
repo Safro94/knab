@@ -1,16 +1,26 @@
-import { useCrypto } from 'hooks/cryptocurrency';
+import Quote from '../../components/quote';
 
-import { IQuote } from 'types/index'
+import { useCrypto } from '../../hooks/cryptocurrency';
+
+import { IQuote } from '../../types/index';
+
+import './index.scss';
 
 const QuotesContainer = () => {
   const { cryptocurrency, searched } = useCrypto();
 
-  console.log(cryptocurrency);
   return (
-    <section>
-      {searched && !cryptocurrency && <h2>We couldn't find any cryptocurrency with that code, please try with another one</h2>}
-      {
-        cryptocurrency?.quotes.map((item: IQuote) => (<div><h1>{item.quote}</h1></div>))
+    <section className='quotes-container'>
+      {searched && !cryptocurrency && <h2 className='quotes-container__error'>We couldn't find any cryptocurrency with that code, please try with another one</h2>}
+      {cryptocurrency &&
+        <>
+          <h2 className='quotes-container__title'>Cryptocurrency: {cryptocurrency?.name} - {cryptocurrency?.code}</h2>
+          <div className='quotes-container__items'>
+            {
+              cryptocurrency?.quotes.map((item: IQuote) => <Quote key={item.currencyCode} item={item} />)
+            }
+          </div>
+        </>
       }
     </section>
   )
