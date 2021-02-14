@@ -113,13 +113,21 @@ describe('Cryptocurrency Service', () => {
 		//Arrange
 		const price = 100;
 		const rates = [
-			{ rate: 1, currency: 'USD' },
-			{ rate: 2, currency: 'EUR' },
+			{ rate: 1, currencyCode: 'USD', currencyName: 'US Dollar' },
+			{ rate: 2, currencyCode: 'EUR', currencyName: 'Euro' },
 		];
 
 		const expectedResult = [
-			{ quote: parseFloat(price * 1).toFixed(2), currency: 'USD' },
-			{ quote: parseFloat(price * 2).toFixed(2), currency: 'EUR' },
+			{
+				quote: parseFloat(price * 1).toFixed(2),
+				currencyCode: 'USD',
+				currencyName: 'US Dollar',
+			},
+			{
+				quote: parseFloat(price * 2).toFixed(2),
+				currencyCode: 'EUR',
+				currencyName: 'Euro',
+			},
 		];
 
 		//Act

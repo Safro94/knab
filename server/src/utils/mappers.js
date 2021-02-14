@@ -1,4 +1,4 @@
-const ratesConstants = require('../constants/rates');
+const currencies = require('../constants/currencies');
 
 const mapCryptocurrency = (crypto, code) => {
 	const { id, name, symbol, quote } = crypto[code];
@@ -12,9 +12,10 @@ const mapCryptocurrency = (crypto, code) => {
 };
 
 const mapRates = rates => {
-	const filteredRates = Object.values(ratesConstants).map(item => ({
-		rate: rates[item],
-		currency: item,
+	const filteredRates = currencies.map(currency => ({
+		rate: rates[currency.code],
+		currencyCode: currency.code,
+		currencyName: currency.name,
 	}));
 
 	return filteredRates;

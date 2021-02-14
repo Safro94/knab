@@ -32,11 +32,11 @@ describe('Mappers', () => {
 		const rates = { USD: 1, EUR: 2, BRL: 3, GBP: 4, AUD: 5 };
 
 		const expectedResult = [
-			{ rate: 1, currency: 'USD' },
-			{ rate: 2, currency: 'EUR' },
-			{ rate: 3, currency: 'BRL' },
-			{ rate: 4, currency: 'GBP' },
-			{ rate: 5, currency: 'AUD' },
+			{ rate: 1, currencyCode: 'USD', currencyName: 'US Dollar' },
+			{ rate: 2, currencyCode: 'EUR', currencyName: 'Euro' },
+			{ rate: 3, currencyCode: 'BRL', currencyName: 'Brazilian Real' },
+			{ rate: 4, currencyCode: 'GBP', currencyName: 'British Pound' },
+			{ rate: 5, currencyCode: 'AUD', currencyName: 'Australian Dollar' },
 		];
 
 		const result = mapRates(rates);

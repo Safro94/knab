@@ -20,8 +20,8 @@ class CryptocurrencyService {
 	}
 
 	calculateQuoteByCurrency(price, rates) {
-		return rates.map(({ rate, currency }) => {
-			return { quote: parseFloat(price * rate).toFixed(2), currency };
+		return rates.map(({ rate, ...rest }) => {
+			return { quote: parseFloat(price * rate).toFixed(2), ...rest };
 		});
 	}
 }
