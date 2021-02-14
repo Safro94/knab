@@ -4,9 +4,6 @@ import QuotesContainer from '../';
 import { useCrypto } from '../../../hooks/cryptocurrency';
 
 jest.mock('../../../hooks/cryptocurrency');
-jest.mock('../../../components/icon', () => () => (
-	<span data-testid='icon'>icon</span>
-));
 
 describe('Quotes container', () => {
 	it('should render a title and 2 elements when cryptocurrency has data', () => {

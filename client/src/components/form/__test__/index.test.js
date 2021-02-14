@@ -5,8 +5,11 @@ describe('Form', () => {
 	it('should render an input and a button', () => {
 		render(
 			<Form>
-				<Form.TextInput placeholder='Enter code' value='btc' />
-
+				<Form.TextInput
+					placeholder='Enter code'
+					value='btc'
+					onChange={() => {}}
+				/>
 				<Form.Submit disabled>Search</Form.Submit>
 			</Form>
 		);

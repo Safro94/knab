@@ -1,7 +1,7 @@
-import SearchContainer from 'containers/searchContainer';
-import QuotesContainer from 'containers/quotesContainer';
+import SearchContainer from '../../containers/searchContainer';
+import QuotesContainer from '../../containers/quotesContainer';
 
-import { useCrypto } from 'hooks/cryptocurrency';
+import { useCrypto } from '../../hooks/cryptocurrency';
 
 const Home = () => {
   const { searched } = useCrypto();

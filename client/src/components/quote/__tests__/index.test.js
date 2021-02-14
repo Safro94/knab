@@ -1,7 +1,6 @@
 import { render, screen } from '../../../utils/test-utils';
 import Quote from '../';
 
-jest.mock('../../icon', () => () => <span data-testid='icon'>icon</span>);
 describe('Quote', () => {
 	it('should render a quote', () => {
 		const item = {
