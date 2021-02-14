@@ -1,0 +1,22 @@
+@use '../../styles/index' as *;
+
+.error {
+	@include display($align: center, $justify: center, $direction: column);
+	width: 80%;
+	margin: auto;
+
+	&__image {
+		width: 150px;
+		height: 150px;
+	}
+
+	&__text {
+		@include display($direction: column);
+		text-align: center;
+	}
+
+	&__highlight {
+		color: $primary-color;
+		cursor: pointer;
+	}
+}
