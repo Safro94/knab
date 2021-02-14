@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import { useErrorHandler } from 'react-error-boundary';
 
-import Form from 'components/form';
+import Form from '../../components/form';
 
-import { useCrypto } from 'hooks/cryptocurrency';
+import { useCrypto } from '../../hooks/cryptocurrency';
 
-import fetcher from 'utils/fetcher';
+import fetcher from '../../utils/fetcher';
 
-import { GET_CRYPTO_ENDPOINT } from 'constants/endpoints';
+import { GET_CRYPTO_ENDPOINT } from '../../constants/endpoints';
 
-import { ICryptocurrency } from 'types/index';
+import { ICryptocurrency } from '../../types/index';
 
 import './index.scss';
 
