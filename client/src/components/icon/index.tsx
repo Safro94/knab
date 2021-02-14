@@ -23,7 +23,7 @@ const Icon = ({ name, classes }: IIconProps) => {
   }, [name]);
 
   return (
-    <i className={classes}>
+    <i className={classes} data-testid='icon'>
       {IconElement.Icon && <IconElement.Icon />}
     </i>
   );
