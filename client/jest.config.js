@@ -8,6 +8,8 @@ module.exports = {
 	testPathIgnorePatterns: ['./node_modules/'],
 	collectCoverageFrom: [
 		'**/*.{js,jsx, ts, tsx}',
+		'!**/types/**',
+		'!**/styles/**',
 		'!**/node_modules/**',
 		'!**/__tests__/**',
 	],
