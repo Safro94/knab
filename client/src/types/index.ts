@@ -1,4 +1,4 @@
-interface IQuote {
+export interface IQuote {
   quote: string;
   currencyCode: string;
   currencyName: string;
@@ -9,5 +9,5 @@ export interface ICryptocurrency {
   name: string;
   code: string;
   price: string;
-  quotes: IQuote
+  quotes: IQuote[]
 }

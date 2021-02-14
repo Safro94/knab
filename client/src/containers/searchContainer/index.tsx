@@ -19,10 +19,11 @@ const SearchContainer = () => {
 
   const [code, setCode] = useState<string>('');
 
-  const isInvalid = code === '';
+  const isInvalid = code?.trim() === '';
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+
     fetcher({
       url: `${process.env.REACT_APP_SERVER_URL}${GET_CRYPTO_ENDPOINT}${code}`,
     }).then((res: ICryptocurrency) => {

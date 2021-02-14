@@ -8,7 +8,7 @@ const TestComponent = ({ children }) => {
 };
 
 describe('Cryptocurrency Hook', () => {
-	it('should set the data when setCryptocurrency is called', async () => {
+	it('should set the cryptocurrency and searched with true when setCryptocurrency is called', async () => {
 		const data = {
 			code: 'BTC',
 			id: 1,
@@ -33,6 +33,7 @@ describe('Cryptocurrency Hook', () => {
 
 		await waitFor(() => {
 			expect(result.current.cryptocurrency).toEqual(data);
+			expect(result.current.searched).toBeTruthy();
 		});
 	});
 });

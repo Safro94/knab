@@ -7,7 +7,8 @@ enum Types {
 }
 
 type CurrencyContextType = {
-  cryptocurrency: ICryptocurrency | null
+  cryptocurrency: ICryptocurrency | null;
+  searched: boolean;
 }
 
 type Action = {
@@ -15,7 +16,7 @@ type Action = {
   value: ICryptocurrency | null;
 }
 
-const initialState = { cryptocurrency: null }
+const initialState = { cryptocurrency: null, searched: false }
 
 const CryptocurrencyContext = createContext<[
   state: CurrencyContextType,
@@ -38,7 +39,7 @@ const useCrypto = () => {
 const reducer = (state: any, action: Action) => {
   switch (action.type) {
     case Types.SET_CRYPTOCURRENCY:
-      return { ...state, cryptocurrency: action.value }
+      return { ...state, cryptocurrency: action.value, searched: true }
     default:
       return state;
   }

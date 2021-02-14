@@ -1,11 +1,15 @@
-import { FC } from 'react';
-
 import SearchContainer from 'containers/searchContainer';
+import QuotesContainer from 'containers/quotesContainer';
 
-const Home: FC = () => {
+import { useCrypto } from 'hooks/cryptocurrency';
+
+const Home = () => {
+  const { searched } = useCrypto();
+
   return (
     <>
       <SearchContainer />
+      {searched && <QuotesContainer />}
     </>
   )
 }
