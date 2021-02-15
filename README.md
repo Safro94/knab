@@ -82,7 +82,7 @@ npm install
 Go to the server folder
 
 ```
-cd knab/server
+cd .. && cd server
 ```
 
 Run
