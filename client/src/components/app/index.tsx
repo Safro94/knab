@@ -16,23 +16,20 @@ import './index.scss';
 
 const App: FC = () => {
   return (
-    <div className="app">
+    <div className='app'>
+      <Header />
 
-      <div className='app__container'>
-        <Header />
+      <ErrorBoundary FallbackComponent={Error}>
+        <Switch>
+          <Route exact path={HOME}>
+            <CryptocurrencyProvider>
+              <Home />
+            </CryptocurrencyProvider>
+          </Route>
 
-        <ErrorBoundary FallbackComponent={Error}>
-          <Switch>
-            <Route exact path={HOME}>
-              <CryptocurrencyProvider>
-                <Home />
-              </CryptocurrencyProvider>
-            </Route>
-
-            <Route component={NotFound} />
-          </Switch>
-        </ErrorBoundary>
-      </div>
+          <Route component={NotFound} />
+        </Switch>
+      </ErrorBoundary>
     </div>
   );
 }

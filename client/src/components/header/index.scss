@@ -7,16 +7,26 @@
 	&__icon {
 		display: block;
 		width: 50px;
+
+		svg path {
+			fill: $secondary-color;
+		}
 	}
 
 	&__links {
-		@include display($align: center);
+		display: none;
 	}
 
 	&__link {
+		@include transition;
 		padding: 8px 16px;
 		font-size: 1rem;
-		color: $primary-color;
+		font-weight: bold;
+		color: $secondary-color;
+
+		&:hover {
+			opacity: 0.8;
+		}
 	}
 }
 
@@ -26,6 +36,10 @@
 
 		&__icon {
 			width: 70px;
+		}
+
+		&__links {
+			@include display($align: center);
 		}
 	}
 }
