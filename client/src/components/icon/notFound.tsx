@@ -3,7 +3,7 @@ const NotFoundIcon = () => (
 		<defs>
 			<style>
 				{
-					'.prefix__a{fill:#603f83ff;opacity:.15}.prefix__e{fill:#fff}.prefix__c,.prefix__e{stroke:#603f83ff}.prefix__d{stroke-linejoin:round}.prefix__c,.prefix__d,.prefix__e{stroke-width:2px}.prefix__c{fill:#603f83ff}.prefix__c,.prefix__e{stroke-miterlimit:10}.prefix__d{fill:none;stroke-linecap:round;stroke:#fff}'
+					'.prefix__a{fill:#603f83ff;opacity:.15}.prefix__e{fill:#fff}.prefix__c,.prefix__e{stroke:#603f83ff}.prefix__d{stroke-linejoin:round}.prefix__c,.prefix__d,.prefix__e{strokeWidth:2px}.prefix__c{fill:#603f83ff}.prefix__c,.prefix__e{strokeMiterlimit:10}.prefix__d{fill:none;stroke-linecap:round;stroke:#fff}'
 				}
 			</style>
 		</defs>

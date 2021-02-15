@@ -10,6 +10,7 @@ module.exports = {
 		'**/*.{js,jsx, ts, tsx}',
 		'!**/types/**',
 		'!**/styles/**',
+		'!**/assets/**',
 		'!**/node_modules/**',
 		'!**/__tests__/**',
 	],

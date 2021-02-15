@@ -16,12 +16,12 @@ const port = process.env.PORT || 5000;
 
 const limiter = rateLimit({
 	windowMs: 60 * 1000,
-	max: 10,
+	max: 30,
 });
 
 const speedLimiter = slowDown({
 	windowMs: 60 * 1000,
-	delayAfter: 10,
+	delayAfter: 30,
 	delayMs: 500,
 });
 
