@@ -73,7 +73,7 @@ nvm use
 Go to the client folder
 
 ```
-cd knab
+cd knab/client
 ```
 
 Run
