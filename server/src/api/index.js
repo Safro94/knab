@@ -25,11 +25,16 @@ const speedLimiter = slowDown({
 	delayMs: 500,
 });
 
+const corsOptions = {
+	origin: process.env.CLIENT_URL,
+	optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(limiter);
 app.use(speedLimiter);
 app.use(compression());
 app.use(helmet());
-app.use(cors());
 app.use(express.json());
 
 // Routes

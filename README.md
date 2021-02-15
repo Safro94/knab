@@ -98,6 +98,7 @@ COIN_MARKET_CAP_API_KEY=your_coin_market_cap_api
 COIN_MARKET_CAP_API_URL=https://pro-api.coinmarketcap.com/v1
 EXCHANGE_RATES_API_URL=https://api.exchangeratesapi.io
 PORT=9000
+CLIENT_URL=http://localhost:3000
 ```
 
 To run both projects at the same time, go to the server folder and run
