@@ -2,12 +2,9 @@
 
 ## Description
 
-This project was built for a coding challenge. The client is a CRA React + Typescript application. The server was built using Node js and Express. This project uses Sass + BEM for the styling.
-
-**Note** Please see this [file](https://github.com/Safro94/xeneta-challenge/blob/master/Notes.md) before using the app.
+This project was built for a coding challenge. The client is a CRA React + Typescript application. The server was built using Node js and Express(BFF approach). This project uses Sass + BEM for the styling.
 
 ## Folder structure
-
     root
       ├── server
       │   └── src
